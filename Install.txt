@@ -1,0 +1,13 @@
+I done with the project here is the github link for the project:
+https://github.com/stanleyjulien/WebServer
+
+Please note that in my case I worked on the project using a MacBook Pro, the CGI and Apache configuration was a little bit challenging on this computer he takes me almost 1 day to got it.
+The application run very well on my computer.
+In my configuration system we go two main folders "CGI-Executables" and "Documents". I put all my CGI Perl Script and Database file inside the folder "CGI-Executables" consider as backend and my HTML, CSS, JQuery and JavaScript files inside the folder "Documents" as frontend
+
+So here is the step to run it:
+
+
+1- To create the database and/or to populate the test data you can run the file "sqlite.pl" and/or you can still use the db file "db_appointment.db" he already have some data populated.
+2- Make sure your apache server is running and configure to run Perl CGI.
+3- Access if to : http://localhost/homepage.html
