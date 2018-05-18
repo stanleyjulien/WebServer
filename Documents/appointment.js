@@ -158,10 +158,30 @@ function getAppointments() {
                         dateName = key+ " "+day;
                     }
                 }
-
+                getTime = dataJson2["time"];
+                timeSplit = getTime.split(":");
+                var hours = timeSplit[0];
+                var minutes = timeSplit[1];
+                if (hours > 12) {
+                  meridian = 'pm';
+                  hours -= 12;
+                } 
+                else if (hours < 12) {
+                  meridian = 'am';
+                  if (hours == 0) {
+                    hours = 12;
+                  }
+                }
+                else {
+                  meridian = 'pm';
+                }
+                //alert(hours + ':' + minutes + meridian);
+                var timeFormat = Number(hours) + ':' + minutes + meridian;
+                //alert(timeSplit);
                 //var date = $("<td></td>").text(dataJson2["date"]);
                 var date = $("<td></td>").text(dateName);
-                var time = $("<td></td>").text(dataJson2["time"]);
+                //var time = $("<td></td>").text(dataJson2["time"]);
+                var time = $("<td></td>").text(timeFormat);
                 var description = $("<td></td>").text(dataJson2["description"]);
 
                 if (typeof (txtSearch) == 'undefined' || txtSearch == null || txtSearch.length == 0) {
