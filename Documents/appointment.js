@@ -4,8 +4,8 @@ $(document).ready(
 
         $("#idBtnNew").click(
             function () {
-                $("#divForm").show();
                 $("#idBtnNew").hide();
+                $("#divForm").show();
             }
         );
 
@@ -130,6 +130,12 @@ function getAppointments() {
             console.log(dataJson);
             console.log(dataJson["1"]["description"]);
 
+            var dateObj = {
+                Jan : "01", Feb : "02", Mar : "03", Apr : "04", May : "05",
+                Jun : "06", Jul : "07", Aug : "08", Sep : "09", Oct : "10",
+                Nov : "11", Dec : "12"
+            }
+
             for (var key1 in dataJson) {
                 //Do stuff here
                 //var desc = dataJson2["description"];
@@ -137,7 +143,22 @@ function getAppointments() {
                 var desc = dataJson2["description"];
                 console.log(dataJson2["date"]);
                 var tableLine = $("<tr></tr>");
-                var date = $("<td></td>").text(dataJson2["date"]);
+                var dateName="";
+                for(var key in dateObj)
+                {
+                    var d = dateObj[key];
+                    var date = dataJson2["date"];
+                    var month = date.slice(5, 7);
+                    var day = Number(date.slice(8, 10));
+                    //console.log(typeof(s));
+                    //console.log(s.slice(5, 7));
+                    if(dateObj[key] == month){
+                        dateName = key+ " "+day;
+                    }
+                }
+
+                //var date = $("<td></td>").text(dataJson2["date"]);
+                var date = $("<td></td>").text(dateName);
                 var time = $("<td></td>").text(dataJson2["time"]);
                 var description = $("<td></td>").text(dataJson2["description"]);
 
