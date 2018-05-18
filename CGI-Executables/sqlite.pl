@@ -32,20 +32,20 @@ if($rv < 0) {
 
 #=for comment
 my $stmt = qq(INSERT INTO tab_appointment (date,time,description)
-               VALUES ('May 2', '11:00am', 'Something'));
+               VALUES ('2018-05-02', '11:00', 'Something'));
 my $rv = $dbh->do($stmt) or die $DBI::errstr;
 
 $stmt = qq(INSERT INTO tab_appointment (date,time,description)
-               VALUES ('May 2', '12:00pm', 'Something else'));
+               VALUES ('2018-05-02', '12:00', 'Something else'));
 $rv = $dbh->do($stmt) or die $DBI::errstr;
 
 $stmt = qq(INSERT INTO tab_appointment (date,time,description)
-               VALUES ('May 4', '8:00am', 'Meet foo'));
+               VALUES ('2018-05-04', '08:00', 'Meet foo'));
 
 $rv = $dbh->do($stmt) or die $DBI::errstr;
 
 $stmt = qq(INSERT INTO tab_appointment (date,time,description)
-               VALUES ('June 2', '11:00am', 'CEO Meeting!'));
+               VALUES ('2018-06-02', '11:00', 'CEO Meeting!'));
 
 $rv = $dbh->do($stmt) or die $DBI::errstr;
 print "Records created successfully\n";
