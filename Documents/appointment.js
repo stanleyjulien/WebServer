@@ -91,15 +91,17 @@ $(document).ready(
             
             
             $("#idDivError").append(dateMessage, timeMessage, descMessage);
-            alert(desc + ":"+time+":"+date+":"+error);
+            //alert(desc + ":"+time+":"+date+":"+error);
             
             
 
             if (error){
                 event.preventDefault(); 
+                //console.log(event.preventDefault());
             }
             else{
-                alert('No errors: Form will be submitted');
+                //alert('No errors: Form will be submitted');
+                console.log('No errors: Form will be submitted');
             }
 
             }
@@ -176,7 +178,8 @@ function getAppointments() {
             }
         },
         error: function () {
-            alert("Handle Errors here");
+            //alert("Handle Errors here");
+            console.log("Handle Errors here");
         },
         complete: function () {
         }
