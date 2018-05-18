@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Appointment</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="appointment.js"></script>
+    <link rel="stylesheet" type="text/css" href="contentstyle.css" media="screen" />
+    <!-- <script>
+    $(document).ready(function(){
+    $("#divForm").hide();
+    $("#idBtnNew").click(
+     function(){
+        $("#divForm").show();
+        $("#idBtnNew").hide();
+      }
+     );
+    
+    $("#idBtnCancel").click(
+     function(){
+        $("#idBtnNew").show();
+        $("#divForm").hide();
+     }
+    );
+    
+    $("p").click(function(){
+        $(this).hide();
+    });
+    $("#idBtnSearch").click( function(){
+       $("tbody").load("cgi-bin/test.pl");
+       }
+       )
+ });
+ </script> 
+ -->
+
+</head>
+
+<body>
+    <div id="idDivError">
+        <!--<span class="error">This field is required</span> -->
+    </div>
+    <div id="divBtnNew">
+        <button id="idBtnNew" type="button">New</button>
+    </div>
+    <br />
+
+    <div id="divForm">
+        <form id="idForm" action="cgi-bin/AddAppointment.pl" method="post" enctype="multipart/form-data">
+            <!--<button type="button" id="idBtnAdd">Add</button>
+            <button type="button" id="idBtnCancel">Cancel</button> -->
+            <div id="formSubmit">
+                <button type="submit" id="idBtnAdd"> Add </button>
+                <input type="button" id="idBtnCancel" value="Cancel"> 
+            </div>
+            <br /> 
+            Date: <input type="date" name="date" id="idDate"> <br>
+            <!--Date: <input type="text" name="date" id="idDate" /> <br /> -->
+            Time: <input id="idTime" type="time" name="time" /> <br />
+            <!--Time: <input type="text" name="time" id="idTime" /> <br /> -->
+            Description: <input type="text" name="description" id="idDescription" />
+        </form>
+    </div>
+
+    <br />
+
+    <div>
+        <input type="text" id="idTxtSearch" />
+        <button type="button" id="idBtnSearch">Search</button>
+    </div>
+    <br />
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <!--<th>Date</th> -->
+                    <th>Time</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <!-- <h2>Data for test!</h2>
+  <p>If you click on me, I will disappear.</p>
+  <p>Click me away!</p>
+  <p>Click me too!</p>
+  -->
+    <div>
+        <h2>Debuging</h2>
+        <h3>Json Data Preview</h3>
+        <div id="divDebuging">
+
+        </div>
+    </div>
+</body>
+
+</html>
